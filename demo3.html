@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let emp={
+            "id":1,
+            "name":"Ramesh",
+            "sal":10000
+        }
+        function showJson(){
+            document.getElementById('i').innerHTML="Employee id is : "+ emp.id;
+            document.getElementById('n').innerHTML="Employee id is : "+ emp.name;
+            document.getElementById('s').innerHTML="Employee id is : "+ emp.sal;
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="s" value="Show Employee Data" onclick="showJson()"><br><br>
+    <h1 id="i"></h1>
+    <h1 id="n"></h1>
+    <h1 id="s"></h1>
+</body>
+</html>

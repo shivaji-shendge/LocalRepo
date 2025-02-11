@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let promise = new Promise((resolve, reject)=>{
+        let isConnected=false;
+        let attempts=0;
+        const maxAttempts=5;
+        setInterval(()=>{
+            attempts++;
+            if(Math.random()<0.2){
+                isConnected=true;
+            }
+            if(isConnected){
+            resolve("Database is connected in attempt "+attempts);
+        }
+        else if(attempts === maxAttempts ){
+            reject("Failed to the connect to server after "+attempts+" attempts");
+        }
+        },1000);
+ 
+      })  
+
+      promise.then((result)=>{
+        console.log(result);
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+    </script>
+</body>
+</html>

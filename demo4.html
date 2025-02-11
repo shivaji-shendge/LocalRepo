@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>i am promise example</title>
+ <script type='text/javascript'>
+   let firstString,secondString;
+   let acceptFirstTextBox=(valFirst)=>
+   {  firstString=valFirst;
+   }
+   let acceptSecondTextBox=(valSecond)=>{
+      secondString=valSecond;
+   }
+   let checkPromise=()=>
+   {
+       let p = new Promise((resolve,reject)=>{
+	        if(firstString===secondString)
+			{  resolve("Promise Success");//call then function
+			}
+			else
+			{ reject("Promise Failed");
+			}
+	   });
+	   p.then((msg)=>{
+	     document.getElementById("h").innerHTML=msg;
+	   });
+	   p.catch((msg)=>{
+	        document.getElementById("h").innerHTML=msg;
+	   });
+   }
+   
+ </script>
+ <style>
+    input{
+	   width:400px;
+	   height:40px;
+	}
+ </style>
+</head>
+<body>
+ <input type='text' name='name' id='f' value='' onkeyup="acceptFirstTextBox(this.value)"/><br><br>
+ <input type='text' name='name' id='s' value='' onkeyup="acceptSecondTextBox(this.value)"/><br><br>
+ <input type='submit' name='s' value='Check Promise' onclick="checkPromise()" />
+ <br><br>
+ <h1 id="h"></h1>
+</body>
+</html>
