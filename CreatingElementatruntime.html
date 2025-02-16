@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        div{
+            width:80%;
+            min-height: 100px;
+            margin: 50px auto;
+            display: flex;
+            gap:20px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #btn{
+            width: 200px;
+            height: 40px;
+            background-color: royalblue;
+            color: white;
+            font-size: 18px;
+            border:none;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        let count=1;
+        function addNewPara(){
+            let newElement = document.createElement("p")
+            newElement.innerText=`Paragraph : ${count++}  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero vitae fugit quasi id excepturi pariatur ullam omnis asperiores ut enim, suscipit unde totam. Asperiores totam inventore fugiat provident animi rem laudantium repellendus aliquam distinctio.` ;
+            document.querySelector("#div1").appendChild(newElement);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+    <h1>India's nature diversity... </h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero vitae fugit quasi id excepturi pariatur ullam omnis asperiores ut enim, suscipit unde totam. Asperiores totam inventore fugiat provident animi rem laudantium repellendus aliquam distinctio.</p>
+    </div>
+    <div class="div2">
+        <button id="btn" onclick="addNewPara()">Add new Paragraph</button>
+    </div>
+    
+    
+</body>
+</html>
