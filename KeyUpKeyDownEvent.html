@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+        }
+        .output {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Event Comparison: oninput vs onkeyup vs onchange</h2>
+        
+        <label>Type something:</label>
+        <input type="text" id="inputField" placeholder="Try typing, pasting, or pressing Enter"
+            oninput="handleOnInput()"
+            onkeyup="handleOnKeyUp()"
+            onchange="handleOnChange()">
+        
+        <p class="output" id="oninputOutput">🔹 <b>oninput:</b> (Updates immediately)</p>
+        <p class="output" id="onkeyupOutput">🔹 <b>onkeyup:</b> (Fires after key is released)</p>
+        <p class="output" id="onchangeOutput">🔹 <b>onchange:</b> (Fires when focus is lost)</p>
+    </div>
+
+    <script>
+        function handleOnInput() {
+            let value = document.getElementById("inputField").value;
+            document.getElementById("oninputOutput").innerText = `🔹 oninput: ${value}`;
+        }
+
+        function handleOnKeyUp() {
+            let value = document.getElementById("inputField").value;
+            document.getElementById("onkeyupOutput").innerText = `🔹 onkeyup: ${value}`;
+        }
+
+        function handleOnChange() {
+            let value = document.getElementById("inputField").value;
+            document.getElementById("onchangeOutput").innerText = `🔹 onchange: ${value}`;
+        }
+    </script>
+
+</body>
+</html>
